@@ -28,5 +28,6 @@ script:
   - ./gradlew lint
   - ./gradlew detekt
   - ./gradlew lintKotlin
+  - ./gradlew jacocoTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)
