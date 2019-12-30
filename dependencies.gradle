@@ -1,9 +1,17 @@
 ext {
 
     android = [
-            appCompat : "androidx.appcompat:appcompat:${appCompatVersion}",
-            corektx   : "androidx.core:core-ktx:${coreKtxVersion}",
-            constraint: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
+            appCompat               : "androidx.appcompat:appcompat:${appCompatVersion}",
+            corektx                 : "androidx.core:core-ktx:${coreKtxVersion}",
+            constraint              : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            lifeCycleExtension      : "androidx.lifecycle:lifecycle-extensions:${lifeCycleVersion}",
+            lifeCycleCompiler       : "androidx.lifecycle:lifecycle-compiler:${lifeCycleVersion}",
+            lifeCycleReactiveStreams: "androidx.lifecycle:lifecycle-reactivestreams:${lifeCycleVersion}",
+            lifeCycleCommonJava     : "androidx.lifecycle:lifecycle-common-java8:${lifeCycleVersion}",
+            roomRuntime             : "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler            : "androidx.room:room-compiler:${roomVersion}",
+            cardview                : "androidx.cardview:cardview:${cardViewVersion}",
+            recyclerview            : "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
     ]
 
     kotlin = [
@@ -20,12 +28,29 @@ ext {
             retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
             retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             okHttp3              : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
-            okHttp3Logging       : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+            okHttp3Logging       : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            stetho               : "com.facebook.stetho:stetho:${stethoVersion}",
+            stethoOkHttp         : "com.facebook.stetho:stetho-okhttp3:${stethoOkHttpVersion}"
+    ]
+
+    common = [
+            leakcanary             : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            gson                   : "com.google.code.gson:gson:${gsonVersion}",
+            coil                   : "io.coil-kt:coil:${coilVersion}",
+            dagger                 : "com.google.dagger:dagger:${daggerVersion}",
+            daggerAndroid          : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerAnddropidSupport : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerSupport          : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerAndroidProccessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
     ]
 
     test = [
-            junit   : "junit:junit:${junitVersion}",
-            extjunit: "androidx.test.ext:junit:${extJunitVersion}",
-            espresso: "androidx.test.espresso:espresso-core:${espressoVersion}",
+            junit        : "junit:junit:${junitVersion}",
+            extjunit     : "androidx.test.ext:junit:${extJunitVersion}",
+            espresso     : "androidx.test.espresso:espresso-core:${espressoVersion}",
+            mockito      : "org.mockito:mockito-core:${mockitoVersion}",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
+            robolectric  : "org.robolectric:robolectric:${robolectricVersion}"
     ]
 }
