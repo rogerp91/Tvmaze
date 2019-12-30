@@ -46,3 +46,8 @@ detekt {
         }
     }
 }
+
+kotlinter {
+    ignoreFailures = false
+    experimentalRules = false
+}
