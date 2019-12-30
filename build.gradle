@@ -14,6 +14,7 @@ buildscript {
         classpath "org.jmailen.gradle:kotlinter-gradle:$gradleBuildKotlinterVersion"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$gradleBuildDetektVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$gradleBuildkotlinVersion"
+        classpath "com.dicedmelon.gradle:jacoco-android:$jacocoVersion"
     }
 }
 

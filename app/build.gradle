@@ -30,6 +30,24 @@ android {
 dependencies {
     implementation project(path: ':common')
     implementation kotlin.std
-    implementation android.values()
-    implementation test.values()
+    implementation android.appCompat
+    implementation android.corektx
+    implementation android.constraint
+
+    implementation common.dagger
+    implementation common.daggerAndroid
+    implementation common.daggerAnddropidSupport
+    kapt common.daggerCompiler
+    kapt common.daggerAndroidProccessor
+    kapt common.daggerSupport
+    kapt android.roomCompiler
+
+    testImplementation test.junit
+    testImplementation test.mockito
+    testImplementation test.mockitoKotlin
+    testImplementation test.robolectric
+    androidTestImplementation test.extjunit
+    androidTestImplementation test.espresso
+
+    annotationProcessor javax.values()
 }

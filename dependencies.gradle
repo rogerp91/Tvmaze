@@ -42,7 +42,7 @@ ext {
             daggerAnddropidSupport : "com.google.dagger:dagger-android-support:${daggerVersion}",
             daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
             daggerSupport          : "com.google.dagger:dagger-android-support:${daggerVersion}",
-            daggerAndroidProccessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            daggerAndroidProccessor: "com.google.dagger:dagger-android-processor:${daggerVersion}"
     ]
 
     test = [
@@ -52,5 +52,10 @@ ext {
             mockito      : "org.mockito:mockito-core:${mockitoVersion}",
             mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
             robolectric  : "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
+    javax = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}"
     ]
 }
