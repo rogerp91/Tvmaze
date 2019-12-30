@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply from: '../plugin.gradle'
+
+android {
+    compileSdkVersion maxApiLevel.toInteger()
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion minApiLevel
+        targetSdkVersion maxApiLevel
+        versionCode appVersionCode.toInteger()
+        versionName appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation kotlin.std
+    implementation android.values()
+    implementation test.values()
+}
+
+detekt {
+    toolVersion = "$gradleBuildDetektVersion"
+    input = files("src")
+    config = files("$rootDir/detekt-config.yml")
+    filters = ".*/resources/.*,.*/build/.*"
+    reports {
+        xml {
+            enabled = true
+            destination = file("$project.rootDir/build/reports/detekt_report.xml")
+        }
+        html {
+            enabled = true
+            destination = file("$project.rootDir/build/reports/detekt_report.html")
+        }
+    }
+}

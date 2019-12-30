@@ -1,0 +1,31 @@
+ext {
+
+    android = [
+            appCompat : "androidx.appcompat:appcompat:${appCompatVersion}",
+            corektx   : "androidx.core:core-ktx:${coreKtxVersion}",
+            constraint: "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
+    ]
+
+    kotlin = [
+            std: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+
+    rx = [
+            java   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            kotlin : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            android: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+    ]
+
+    network = [
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitRxJavaAdapter: "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            okHttp3              : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttp3Logging       : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    ]
+
+    test = [
+            junit   : "junit:junit:${junitVersion}",
+            extjunit: "androidx.test.ext:junit:${extJunitVersion}",
+            espresso: "androidx.test.espresso:espresso-core:${espressoVersion}",
+    ]
+}
