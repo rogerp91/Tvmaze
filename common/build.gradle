@@ -28,11 +28,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    testOptions {
-        unitTests {
-            includeAndroidResources = true
-        }
-    }
 }
 
 dependencies {
@@ -56,7 +51,7 @@ dependencies {
     androidTestImplementation test.extjunit
     androidTestImplementation test.espresso
 
-    annotationProcessor javax.values()
+    kapt javax.values()
 }
 
 detekt {
@@ -79,4 +74,12 @@ detekt {
 kotlinter {
     ignoreFailures = false
     experimentalRules = false
+}
+
+jacoco {
+    toolVersion = "0.8.4"
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
 }

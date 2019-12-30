@@ -49,5 +49,6 @@ dependencies {
     androidTestImplementation test.extjunit
     androidTestImplementation test.espresso
 
-    annotationProcessor javax.values()
+    kapt javax.values()
+
 }
