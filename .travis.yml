@@ -29,6 +29,5 @@ script:
   - ./gradlew detekt
   - ./gradlew lintKotlin
   - ./gradlew jacocoTestReport
-
 after_success:
-  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
+  - bash <(curl -s https://codecov.io/bash)
