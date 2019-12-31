@@ -36,6 +36,7 @@ dependencies {
     implementation android.legacySupport
     implementation android.ui.constraint
 
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation test.junit
     testImplementation test.mockito
     testImplementation test.mockitoKotlin
