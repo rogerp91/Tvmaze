@@ -1,24 +1,25 @@
 ext {
 
     android = [
-            appCompat: "androidx.appcompat:appcompat:${appCompatVersion}",
-            corektx  : "androidx.core:core-ktx:${coreKtxVersion}",
-            ui       : [
+            appCompat    : "androidx.appcompat:appcompat:${appCompatVersion}",
+            corektx      : "androidx.core:core-ktx:${coreKtxVersion}",
+            legacySupport: "androidx.legacy:legacy-support-v4:${legacySupportVersion}",
+            ui           : [
                     cardview    : "androidx.cardview:cardview:${cardViewVersion}",
                     recyclerview: "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
-                    constraint  : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+                    constraint  : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}"
             ],
-            life     : [
+            life         : [
                     lifeCycleExtension      : "androidx.lifecycle:lifecycle-extensions:${lifeCycleVersion}",
                     lifeCycleCompiler       : "androidx.lifecycle:lifecycle-compiler:${lifeCycleVersion}",
                     lifeCycleReactiveStreams: "androidx.lifecycle:lifecycle-reactivestreams:${lifeCycleVersion}",
                     lifeCycleCommonJava     : "androidx.lifecycle:lifecycle-common-java8:${lifeCycleVersion}",
             ],
-            nav      : [
+            nav          : [
                     fragment: "androidx.navigation:navigation-fragment:$navVersion",
                     ui      : "androidx.navigation:navigation-ui:$navVersion"
             ],
-            db       : [
+            db           : [
                     roomRuntime : "androidx.room:room-runtime:${roomVersion}",
                     roomCompiler: "androidx.room:room-compiler:${roomVersion}",
             ]

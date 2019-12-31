@@ -29,6 +29,7 @@ android {
 
 dependencies {
     implementation project(path: ':common')
+    implementation project(path: ':feature-tv')
     implementation kotlin.std
     implementation android.appCompat
     implementation android.corektx
