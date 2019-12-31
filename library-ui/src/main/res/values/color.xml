@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ui_color_primary">#FFFFFF</color>
+    <color name="ui_color_primaryDark">#98999B</color>
+    <color name="ui_background_primary">#292929</color>
+    <color name="ui_background_primary_dark">#212121</color>
+    <color name="ui_color_accent">#007bff</color>
+    <color name="ui_white">#FFFFFF</color>
+    <color name="ui_grey">#98999B</color>
+    <color name="ui_darkerGrey">#727273</color>
+    <color name="ui_red">#ff0000</color>
+
+</resources>

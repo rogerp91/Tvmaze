@@ -29,6 +29,7 @@ android {
 
 dependencies {
     implementation project(path: ':common')
+    implementation project(path: ':library-ui')
     implementation kotlin.std
     implementation android.appCompat
     implementation android.corektx
@@ -45,4 +46,5 @@ dependencies {
     androidTestImplementation test.espresso
 
     kapt javax.values()
+    implementation project(path: ':feature-tv')
 }

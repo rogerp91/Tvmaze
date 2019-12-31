@@ -23,13 +23,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    resourcePrefix "tv_"
 }
 
 dependencies {
     implementation project(path: ':common')
+    implementation project(path: ':library-ui')
     implementation kotlin.std
+
     implementation android.appCompat
     implementation android.corektx
+    implementation android.legacySupport
     implementation android.ui.constraint
 
     testImplementation test.junit

@@ -1,2 +1,2 @@
-include ':app', ':common', ':feature-tv'
+include ':app', ':common', ':feature-tv', ':library-ui'
 rootProject.name='Tvmaze'
