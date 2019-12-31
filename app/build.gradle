@@ -32,15 +32,10 @@ dependencies {
     implementation kotlin.std
     implementation android.appCompat
     implementation android.corektx
-    implementation android.constraint
+    implementation android.ui.constraint
 
-    implementation common.dagger
-    implementation common.daggerAndroid
-    implementation common.daggerAnddropidSupport
-    kapt common.daggerCompiler
-    kapt common.daggerAndroidProccessor
-    kapt common.daggerSupport
-    kapt android.roomCompiler
+    implementation android.nav.fragment
+    implementation android.nav.ui
 
     testImplementation test.junit
     testImplementation test.mockito
@@ -50,5 +45,4 @@ dependencies {
     androidTestImplementation test.espresso
 
     kapt javax.values()
-
 }

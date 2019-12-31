@@ -1,17 +1,27 @@
 ext {
 
     android = [
-            appCompat               : "androidx.appcompat:appcompat:${appCompatVersion}",
-            corektx                 : "androidx.core:core-ktx:${coreKtxVersion}",
-            constraint              : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
-            lifeCycleExtension      : "androidx.lifecycle:lifecycle-extensions:${lifeCycleVersion}",
-            lifeCycleCompiler       : "androidx.lifecycle:lifecycle-compiler:${lifeCycleVersion}",
-            lifeCycleReactiveStreams: "androidx.lifecycle:lifecycle-reactivestreams:${lifeCycleVersion}",
-            lifeCycleCommonJava     : "androidx.lifecycle:lifecycle-common-java8:${lifeCycleVersion}",
-            roomRuntime             : "androidx.room:room-runtime:${roomVersion}",
-            roomCompiler            : "androidx.room:room-compiler:${roomVersion}",
-            cardview                : "androidx.cardview:cardview:${cardViewVersion}",
-            recyclerview            : "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+            appCompat: "androidx.appcompat:appcompat:${appCompatVersion}",
+            corektx  : "androidx.core:core-ktx:${coreKtxVersion}",
+            ui       : [
+                    cardview    : "androidx.cardview:cardview:${cardViewVersion}",
+                    recyclerview: "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
+                    constraint  : "androidx.constraintlayout:constraintlayout:${constraintlayoutVersion}",
+            ],
+            life     : [
+                    lifeCycleExtension      : "androidx.lifecycle:lifecycle-extensions:${lifeCycleVersion}",
+                    lifeCycleCompiler       : "androidx.lifecycle:lifecycle-compiler:${lifeCycleVersion}",
+                    lifeCycleReactiveStreams: "androidx.lifecycle:lifecycle-reactivestreams:${lifeCycleVersion}",
+                    lifeCycleCommonJava     : "androidx.lifecycle:lifecycle-common-java8:${lifeCycleVersion}",
+            ],
+            nav      : [
+                    fragment: "androidx.navigation:navigation-fragment:$navVersion",
+                    ui      : "androidx.navigation:navigation-ui:$navVersion"
+            ],
+            db       : [
+                    roomRuntime : "androidx.room:room-runtime:${roomVersion}",
+                    roomCompiler: "androidx.room:room-compiler:${roomVersion}",
+            ]
     ]
 
     kotlin = [
@@ -34,15 +44,17 @@ ext {
     ]
 
     common = [
-            leakcanary             : "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
-            gson                   : "com.google.code.gson:gson:${gsonVersion}",
-            coil                   : "io.coil-kt:coil:${coilVersion}",
-            dagger                 : "com.google.dagger:dagger:${daggerVersion}",
-            daggerAndroid          : "com.google.dagger:dagger-android:${daggerVersion}",
-            daggerAnddropidSupport : "com.google.dagger:dagger-android-support:${daggerVersion}",
-            daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
-            daggerSupport          : "com.google.dagger:dagger-android-support:${daggerVersion}",
-            daggerAndroidProccessor: "com.google.dagger:dagger-android-processor:${daggerVersion}"
+            leakcanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            gson      : "com.google.code.gson:gson:${gsonVersion}",
+            coil      : "io.coil-kt:coil:${coilVersion}",
+            di        : [
+                    dagger                 : "com.google.dagger:dagger:${daggerVersion}",
+                    daggerAndroid          : "com.google.dagger:dagger-android:${daggerVersion}",
+                    daggerAnddropidSupport : "com.google.dagger:dagger-android-support:${daggerVersion}",
+                    daggerCompiler         : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                    daggerSupport          : "com.google.dagger:dagger-android-support:${daggerVersion}",
+                    daggerAndroidProccessor: "com.google.dagger:dagger-android-processor:${daggerVersion}"
+            ]
     ]
 
     test = [
