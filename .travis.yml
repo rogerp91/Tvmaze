@@ -36,6 +36,13 @@ jobs:
       script: ./gradlew feature-tv:lint
       script: ./gradlew feature-tv:detekt
       script: ./gradlew feature-tv:lintKotlin
+    - stage: library-ui
+      script: ./gradlew library-ui:test
+      script: ./gradlew library-ui:assembleDebug
+      script: ./gradlew library-ui:test
+      script: ./gradlew library-ui:lint
+      script: ./gradlew library-ui:detekt
+      script: ./gradlew library-ui:lintKotlin
 script:
   - ./gradlew jacocoTestReport
   - bundle exec danger
