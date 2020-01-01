@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  feature_tv:
     working_directory: ~/Tvmaze
     docker:
       - image: circleci/android:api-28
@@ -9,26 +9,6 @@ jobs:
       JVM_OPTS: -Xmx4g
     steps:
       - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
-          name: Run Common Module Unit Tests
-          command: ./gradlew common:test
-      - store_artifacts:
-          path: common/build/reports
-          destination: reports
-      - store_test_results:
-          path: common/build/test-results
-      - run:
-          name: Run Common Detekt
-          command: ./gradlew common:detekt
       - run:
           name: Run FeactureTV Module Unit Tests
           command: ./gradlew feature-tv:test
@@ -40,3 +20,29 @@ jobs:
       - run:
           name: Run FeactureTV Detekt
           command: ./gradlew feature-tv:detekt
+  common:
+    working_directory: ~/Tvmaze
+    docker:
+      - image: circleci/android:api-28
+    environment:
+      GRADLE_OPTS: -Xmx4g -Dorg.gradle.daemon=false
+      JVM_OPTS: -Xmx4g
+    steps:
+      - checkout
+      - run:
+          name: Run Common Module Unit Tests
+          command: ./gradlew common:test
+      - store_artifacts:
+          path: common/build/reports
+          destination: reports
+      - store_test_results:
+          path: common/build/test-results
+      - run:
+          name: Run Common Detekt
+          command: ./gradlew common:detekt
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - feature_tv
+      - common
