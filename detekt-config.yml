@@ -63,7 +63,7 @@ comments:
     searchInInnerObject: true
     searchInInnerInterface: true
   UndocumentedPublicFunction:
-    active: true
+    active: false
 
 complexity:
   active: true
@@ -447,8 +447,6 @@ style:
   ModifierOrder:
     active: true
   NestedClassesVisibility:
-    active: false
-  NewLineAtEndOfFile:
     active: false
   NoTabs:
     active: false

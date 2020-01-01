@@ -1,4 +1,4 @@
-package com.github.rogerp91.feature_tv.data.source.local.entity
+package com.github.rogerp91.tv.data.source.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

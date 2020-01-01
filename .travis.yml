@@ -21,13 +21,23 @@ android:
     - extra-android-m2repository
     - $ANDROID_TARGET
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+jobs:
+  include:
+    - stage: common
+      script: ./gradlew common:assembleDebug
+      script: ./gradlew common:test
+      script: ./gradlew common:lint
+      script: ./gradlew common:detekt
+      script: ./gradlew common:lintKotlin
+    - stage: feature-tv
+      script: ./gradlew feature-tv:test
+      script: ./gradlew feature-tv:assembleDebug
+      script: ./gradlew feature-tv:test
+      script: ./gradlew feature-tv:lint
+      script: ./gradlew feature-tv:detekt
+      script: ./gradlew feature-tv:lintKotlin
 script:
-  - ./gradlew clean
-  - ./gradlew assembleDebug
-  - ./gradlew test
-  - ./gradlew lint
-  - ./gradlew detekt
-  - ./gradlew lintKotlin
   - ./gradlew jacocoTestReport
+  - bundle exec danger
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t cddab2a1-7325-460c-a37c-8f9eaf2aad55

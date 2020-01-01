@@ -3,7 +3,9 @@ package com.github.rogerp91.feature_tv.data.source.local
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.github.rogerp91.feature_tv.data.source.local.entity.ResultEntity
+import com.github.rogerp91.tv.data.source.local.TvDao
+import com.github.rogerp91.tv.data.source.local.TvDatabase
+import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
 import org.junit.After

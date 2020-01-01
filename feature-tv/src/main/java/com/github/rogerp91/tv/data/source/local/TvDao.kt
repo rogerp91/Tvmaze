@@ -1,10 +1,10 @@
-package com.github.rogerp91.feature_tv.data.source.local
+package com.github.rogerp91.tv.data.source.local
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.github.rogerp91.feature_tv.data.source.local.entity.ResultEntity
+import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
 
 @Dao
 interface TvDao {

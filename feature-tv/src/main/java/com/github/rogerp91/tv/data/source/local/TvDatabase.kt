@@ -1,10 +1,10 @@
-package com.github.rogerp91.feature_tv.data.source.local
+package com.github.rogerp91.tv.data.source.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.github.rogerp91.feature_tv.data.source.local.entity.ResultEntity
+import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
 
 @Database(entities = [ResultEntity::class], version = 1, exportSchema = false)
 abstract class TvDatabase : RoomDatabase() {
@@ -18,7 +18,10 @@ abstract class TvDatabase : RoomDatabase() {
 
         fun getInstance(context: Context): TvDatabase =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+                INSTANCE
+                    ?: buildDatabase(
+                        context
+                    ).also { INSTANCE = it }
             }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(

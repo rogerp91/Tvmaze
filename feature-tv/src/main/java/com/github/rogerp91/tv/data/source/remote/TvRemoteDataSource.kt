@@ -1,7 +1,7 @@
-package com.github.rogerp91.feature_tv.data.source.remote
+package com.github.rogerp91.tv.data.source.remote
 
 import com.github.rogerp91.common.datasource.DataSource
-import com.github.rogerp91.feature_tv.data.source.remote.dto.ResultDto
+import com.github.rogerp91.tv.data.source.remote.dto.ResultDto
 import io.reactivex.Flowable
 
 open class TvRemoteDataSource : DataSource<ResultDto> {

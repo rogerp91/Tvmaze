@@ -1,4 +1,4 @@
-package com.github.rogerp91.feature_tv.presentation
+package com.github.rogerp91.tv.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

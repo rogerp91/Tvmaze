@@ -1,7 +1,7 @@
-package com.github.rogerp91.feature_tv.data.source.local
+package com.github.rogerp91.tv.data.source.local
 
 import com.github.rogerp91.common.datasource.DataSource
-import com.github.rogerp91.feature_tv.data.source.local.entity.ResultEntity
+import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
 import io.reactivex.Flowable
 
 open class TvLocalDataSource(
@@ -23,5 +23,4 @@ open class TvLocalDataSource(
     override fun refresh() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
 }
