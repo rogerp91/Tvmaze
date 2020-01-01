@@ -8,12 +8,6 @@ env:
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-before_install:
-  - gem install danger --no-ri --no-doc
-  - gem install danger-swiftlint --no-ri --no-doc
-before_script:
-  - danger
-  - pod lib lint --quick
 cache:
   directories:
     - $HOME/.gradle/caches/
