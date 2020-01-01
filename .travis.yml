@@ -21,6 +21,12 @@ android:
     - extra-android-m2repository
     - $ANDROID_TARGET
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+jobs:
+  include:
+    - stage: test
+      script: ./gradlew feature-tv:detekt
+    - stage: deploy
+      script: ./gradlew feature-tv:test
 script:
   - ./gradlew clean
   - ./gradlew assembleDebug
