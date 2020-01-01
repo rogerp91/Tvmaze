@@ -36,5 +36,32 @@ script:
   - ./gradlew lintKotlin
   - ./gradlew jacocoTestReport
   - bundle exec danger
+matrix:
+  include:
+    - os: linux
+      language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - tools
+          - platform-tools-28.0.2
+          - build-tools-28.0.3
+          - android-28
+          - extra-google-google_play_services
+          - extra-google-m2repository
+          - extra-android-m2repository
+
+    - os: linux
+      language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - tools
+          - platform-tools-28.0.2
+          - build-tools-28.0.3
+          - android-28
+          - extra-google-google_play_services
+          - extra-google-m2repository
+          - extra-android-m2repository
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t cddab2a1-7325-460c-a37c-8f9eaf2aad55
