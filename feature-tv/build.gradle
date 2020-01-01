@@ -12,7 +12,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
-
+    testOptions.unitTests.includeAndroidResources = true
     buildTypes {
         release {
             minifyEnabled false
@@ -36,7 +36,13 @@ dependencies {
     implementation android.legacySupport
     implementation android.ui.constraint
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation rx.java
+    implementation rx.kotlin
+    implementation rx.android
+
+    implementation android.db.roomRuntime
+    kapt android.db.roomCompiler
+
     testImplementation test.junit
     testImplementation test.mockito
     testImplementation test.mockitoKotlin
