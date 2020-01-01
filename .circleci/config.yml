@@ -32,11 +32,23 @@ jobs:
       - run:
           name: Send coverage
           command: bash <(curl -s https://codecov.io/bash) -t cddab2a1-7325-460c-a37c-8f9eaf2aad55
+  danger:
+    working_directory: ~/Tvmaze
+    docker:
+      - image: circleci/android:api-29
+    environment:
+      GRADLE_OPTS: -Xmx4g -Dorg.gradle.daemon=false
+      JVM_OPTS: -Xmx4g
+    steps:
+      - checkout
+      - run:
+          name: Danger
+          command: bundle exec danger --verbose
 deployment:
   coverage:
     branch: [master]
     commands:
-      - bash <(curl -s https://codecov.io/bash)
+      - bash <(curl -s https://codecov.io/bash) -t cddab2a1-7325-460c-a37c-8f9eaf2aad55
 workflows:
   version: 2
   build_and_test:
