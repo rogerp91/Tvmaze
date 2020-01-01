@@ -45,6 +45,7 @@ dependencies {
     kapt common.di.daggerSupport
     kapt android.db.roomCompiler
 
+    implementation rx.java
     testImplementation test.junit
     testImplementation test.mockito
     testImplementation test.mockitoKotlin
