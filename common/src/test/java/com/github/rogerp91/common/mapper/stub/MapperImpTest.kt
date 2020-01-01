@@ -7,6 +7,7 @@ import org.junit.Test
 
 class MapperImp {
 
+    @Suppress("LateinitUsage")
     private lateinit var mapper: Mapper<StubDto, StubEntity, StubObject>
 
     @Before

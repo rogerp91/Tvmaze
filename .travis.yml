@@ -29,5 +29,7 @@ script:
   - ./gradlew detekt
   - ./gradlew lintKotlin
   - ./gradlew jacocoTestReport
+  - bundle install
+  - bundle exec danger
 after_success:
   - bash <(curl -s https://codecov.io/bash)

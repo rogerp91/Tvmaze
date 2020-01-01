@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tv_fist_fragment"
-        android:name="com.github.rogerp91.feature_tv.presentation.TvFragment"
+        android:name="com.github.rogerp91.tv.presentation.TvFragment"
         android:label="tv_fist_fragment"
         tools:layout="@layout/tv_fragment" />
 

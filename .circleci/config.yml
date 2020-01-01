@@ -3,7 +3,7 @@ jobs:
   feature_tv:
     working_directory: ~/Tvmaze
     docker:
-      - image: circleci/android:api-28
+      - image: circleci/android:api-29
     environment:
       GRADLE_OPTS: -Xmx4g -Dorg.gradle.daemon=false
       JVM_OPTS: -Xmx4g
@@ -20,29 +20,26 @@ jobs:
       - run:
           name: Run FeactureTV Detekt
           command: ./gradlew feature-tv:detekt
-  common:
+  coverage:
     working_directory: ~/Tvmaze
     docker:
-      - image: circleci/android:api-28
+      - image: circleci/android:api-29
     environment:
       GRADLE_OPTS: -Xmx4g -Dorg.gradle.daemon=false
       JVM_OPTS: -Xmx4g
     steps:
       - checkout
       - run:
-          name: Run Common Module Unit Tests
-          command: ./gradlew common:test
-      - store_artifacts:
-          path: common/build/reports
-          destination: reports
-      - store_test_results:
-          path: common/build/test-results
-      - run:
-          name: Run Common Detekt
-          command: ./gradlew common:detekt
+          name: Send coverage
+          command: bash <(curl -s https://codecov.io/bash) -t cddab2a1-7325-460c-a37c-8f9eaf2aad55
+deployment:
+  coverage:
+    branch: [master]
+    commands:
+      - bash <(curl -s https://codecov.io/bash)
 workflows:
   version: 2
   build_and_test:
     jobs:
       - feature_tv
-      - common
+      - coverage
