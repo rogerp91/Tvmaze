@@ -8,7 +8,7 @@ import com.github.rogerp91.common.util.test.ResultEntityTest
 import io.reactivex.subscribers.TestSubscriber
 import junit.framework.TestCase
 import org.junit.After
-import org.junit.Assert.assertNull
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
@@ -90,7 +90,7 @@ open class TvLocalDataSourceTest {
         result.subscribe(subscriber)
 
         subscriber.assertComplete()
-        assertNull(subscriber.values())
+        assertNotNull(subscriber.values())
     }
 
     @Test
