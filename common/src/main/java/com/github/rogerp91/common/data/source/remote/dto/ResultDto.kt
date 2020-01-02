@@ -1,4 +1,4 @@
-package com.github.rogerp91.tv.data.source.remote.dto
+package com.github.rogerp91.common.data.source.remote.dto
 
 data class ResultDto(
     val popularity: Double,

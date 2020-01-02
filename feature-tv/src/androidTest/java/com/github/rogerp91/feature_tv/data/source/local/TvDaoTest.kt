@@ -5,7 +5,8 @@ import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.github.rogerp91.tv.data.source.local.TvDao
 import com.github.rogerp91.tv.data.source.local.TvDatabase
-import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
+import com.github.rogerp91.common.data.source.local.entity.ResultEntity
+import com.github.rogerp91.common.util.test.ResultEntityTest
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotNull
 import org.junit.After
@@ -49,7 +50,7 @@ open class TvDaoTest {
         val result = tvDao.getTv(419707)
 
         assertNotNull(result)
-        assertEquals(419707.toLong(), result.id.toLong())
+        assertEquals(419707.toLong(), result!!.id.toLong())
     }
 
     @Test
@@ -66,22 +67,10 @@ open class TvDaoTest {
     }
 
     private fun getStubResultEntity(): ResultEntity {
-        return ResultEntity(
-            541.169, 569, false,
-            "/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg", 419704,
-            false, "/p3TCqUDoVsrIm8fHK9KOTfWnDjZ.jpg",
-            "en", "Ad Astra", "Ad Astra", 6.0,
-            "The near future", "2019-09-17"
-        )
+        return ResultEntityTest.getStubResultEntity()
     }
 
     private fun getStubResultEntity2(): ResultEntity {
-        return ResultEntity(
-            546.165, 600, true,
-            "/xBHvZcjRiWyobQ9kxBhO6BdtwRI.jpg", 419707,
-            false, "/p3TCqUDoerIm8fHK9KOTfWnDjZ.jpg",
-            "en", "New Avenge", "New Avenger", 8.0,
-            "The near future", "2019-09-10"
-        )
+        return ResultEntityTest.getStubResultEntity2()
     }
 }
