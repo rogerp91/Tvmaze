@@ -8,7 +8,7 @@ interface DataSource<T> {
 
     fun get(id: String): Flowable<T>
 
-    fun save(model: T)
+    fun save(model: T): Long?
 
     fun refresh()
 }

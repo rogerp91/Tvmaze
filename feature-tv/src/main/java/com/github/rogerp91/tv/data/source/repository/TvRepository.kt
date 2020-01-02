@@ -3,9 +3,9 @@ package com.github.rogerp91.tv.data.source.repository
 import com.github.rogerp91.common.datasource.DataSource
 import com.github.rogerp91.common.mapper.Mapper
 import com.github.rogerp91.common.repository.Repository
-import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
-import com.github.rogerp91.tv.data.source.remote.dto.ResultDto
-import com.github.rogerp91.tv.domain.model.Result
+import com.github.rogerp91.common.data.source.local.entity.ResultEntity
+import com.github.rogerp91.common.data.source.remote.dto.ResultDto
+import com.github.rogerp91.common.domain.model.Result
 import io.reactivex.Flowable
 import io.reactivex.Single
 

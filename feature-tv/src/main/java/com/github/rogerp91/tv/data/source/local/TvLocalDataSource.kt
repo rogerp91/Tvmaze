@@ -1,7 +1,7 @@
 package com.github.rogerp91.tv.data.source.local
 
+import com.github.rogerp91.common.data.source.local.entity.ResultEntity
 import com.github.rogerp91.common.datasource.DataSource
-import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
 import io.reactivex.Flowable
 
 open class TvLocalDataSource(
@@ -9,18 +9,22 @@ open class TvLocalDataSource(
 ) : DataSource<ResultEntity> {
 
     override fun get(): Flowable<List<ResultEntity>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return Flowable.just(dao.getTv())
     }
 
     override fun get(id: String): Flowable<ResultEntity> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        var resultEntity = dao.getTv(id.toLong())
+        if (resultEntity == null) {
+            resultEntity = ResultEntity.EMPTY
+        }
+        return Flowable.just(resultEntity)
     }
 
-    override fun save(model: ResultEntity) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun save(model: ResultEntity): Long? {
+        return dao.insertTv(model)
     }
 
     override fun refresh() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        // empty
     }
 }

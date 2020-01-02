@@ -1,8 +1,8 @@
-package com.github.rogerp91.tv.data.source.repository
+package com.github.rogerp91.common.util
 
-import com.github.rogerp91.tv.data.source.local.entity.ResultEntity
-import com.github.rogerp91.tv.data.source.remote.dto.ResultDto
-import com.github.rogerp91.tv.domain.model.Result
+import com.github.rogerp91.common.data.source.local.entity.ResultEntity
+import com.github.rogerp91.common.data.source.remote.dto.ResultDto
+import com.github.rogerp91.common.domain.model.Result
 
 class TvMapperObject {
 

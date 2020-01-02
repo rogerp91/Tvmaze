@@ -43,6 +43,8 @@ dependencies {
     kapt common.di.daggerCompiler
     kapt common.di.daggerAndroidProccessor
     kapt common.di.daggerSupport
+
+    implementation android.db.roomRuntime
     kapt android.db.roomCompiler
 
     implementation rx.java

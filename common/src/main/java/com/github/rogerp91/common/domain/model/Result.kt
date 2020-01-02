@@ -1,4 +1,4 @@
-package com.github.rogerp91.tv.domain.model
+package com.github.rogerp91.common.domain.model
 
 class Result(
     private val popularity: Double,
